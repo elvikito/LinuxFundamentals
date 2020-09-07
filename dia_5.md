@@ -14,9 +14,9 @@ Tipos de Rutas
 Ejemplos
 
 ```
-ls *ue*
-ls nuev?
-ls nuevo[1-5]
+$ ls *ue*
+$ ls nuev?
+$ ls [1-3].txt # touch {1..3}.txt # ls {1..3}.txt
 ```
 
 ## find
@@ -36,7 +36,7 @@ $ find ./ -maxdepth 1 -type d # listar los directorios que hay en el directorio 
 
 $ find ./ -mtime 0 -type f # lista los ficheros que se han modificado hoy en el directorio actual
 
-$ find /var/dir -mtime +20 -type d -exec rm -f {} \; # borra todos los subdirectorios del directorio /var/dir que tengan una antigüedad mayor de 20 días
+$ find /var/dir -mtime +20 -type f -exec rm -f {} \; # borra todos los subdirectorios del directorio /var/dir que tengan una antigüedad mayor de 20 días
 ```
 
 ## locate
@@ -53,7 +53,7 @@ Los enlaces son archivos especiales que permiten que varios nombres (enlaces) se
 
 ### Enlaces simbólicos
 
-En el caso de que se elimine un enlace simbólico, no se elimina el archivo al que indica. Los enlaces simbólicos se crean utilizando comandos In -s de acuerdo con la siguiente sintaxis: 
+En el caso de que se elimine un enlace simbólico, no se elimina el archivo al que indica. Los enlaces simbólicos se crean utilizando comandos ln -s de acuerdo con la siguiente sintaxis: 
 
 ```
 $ ln -s  /directorio  nombre_del_enlace
