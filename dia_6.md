@@ -44,8 +44,8 @@ ls > salida 2>&1
 $ history | more
 $ cat fichero.txt | grep nuevo | tail –n 10 
 $ cat fichero.txt | sort –u
-$ cat fichero.txt | short > fichero.txt 
-$ ps –edf | grep sshd
+$ cat fichero.txt | sort > fichero_1.txt 
+$ ps | grep sshd
 ```
 
 ## Compresión de Archivos 
@@ -60,7 +60,7 @@ Para comprimir primero tenemos que empaquetar todos los archivos y directorios q
 
 Permite empaquetar archivos y directorios
 ```
-$ tar [opciones] [origen] [destino]
+$ tar [opciones][origen] [destino]
 ```
 Opciones
 * c crear un archivo
@@ -99,17 +99,17 @@ solo comprime archivos, no carpetas
 #### tar.bz2
 
 1. empaquetar: `tar -c archivos | bzip2 > archivo.tar.bz2`
-2. desempaquetar: `bzip2 -dc archivo.tar.bz2 | tar -xvtar jvxf archivo.tar.bz2`
+2. desempaquetar: `bzip2 -dc archivo.tar.bz2 | tar jvxf archivo.tar.bz2`
 
 #### rar
-1. empaquetar: `rar -a archivo.rar /carpeta/archivos`
-2. desempaquetar: `rar -x archivo.rar`
+1. empaquetar: `rar a archivo.rar /carpeta/archivos`
+2. desempaquetar: `rar x archivo.rar`
 
 
 ## Manejo de Procesos
 
 (bg, fg and CTRL+Z) El sistema es multitarea, podemos dejar múltiples procesos corriendo en segundo plano. 
-ejemplo `$ sleep 100 &`
+ejemplo `$ sleep 100 &` y con el comando `jobs` se puede ver los procesos que se estan ejecutando.
 
 ### bg
 
